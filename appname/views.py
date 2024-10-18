@@ -104,12 +104,13 @@ def spoboard(request):
 
 def userboard(request):
     user = request.user
-    patient = UserDetail.objects.get(patient=user)
-    print(patient.name)
-    obj = SponsorShip.objects.filter(uname=patient.name).all()
-    context={
-        'obj':obj,
-    }        
+    try:
+        obj = UserDetail.objects.get(patient=user)
+    except UserDetail.DoesNotExist:
+        obj = None 
+    context = {
+        'obj': obj,
+    }    
     return render(request,'appname/userboard.html',context)
     
 def sponsored(request):
