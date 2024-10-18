@@ -1,0 +1,36 @@
+{% extends "appname/_base.html" %}
+{% load static %}
+{%block content%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="jumbotron">
+            {% if registered %}
+                <h1>Thanks for registering, Please Log in! <br><br><a href="{%url 'index' %}"><button>Login</button></a>  </h1>
+            {% else %}
+                <h1>Registration for Sponsor:</h1>
+                {% load crispy_forms_tags %}
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{ var_sponsorForm|crispy }}
+                    {{ var_sponsorAddForm|crispy }}
+                    <input type="submit" value="Register" class="btn btn-primary">
+                </form>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}
+
+
+
+

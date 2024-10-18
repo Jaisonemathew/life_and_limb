@@ -1,0 +1,48 @@
+{% extends "appname/_base.html" %}
+{% load static %}
+{% block navbar%}
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="{% url 'user_dashboard' %}"class="active">Home<br></a></li>
+        
+        {% comment %} <li><a href="{% url 'feed' %}">Review</a></li> {% endcomment %}
+
+        <li><a href="{% url 'logout' %}">Logout </a></li>
+   
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
+    {%endblock%}
+{%block content%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="jumbotron">
+            {% if registered %}
+                <h1>Thanks for registering, Please Log in! <br><br><a href="{%url 'login' %}"><button>Login</button></a>  </h1>
+            {% else %}
+                <h1>Registration for User:</h1>
+                {% load crispy_forms_tags %}
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ var_userForm|crispy }}
+                    {{ var_userAddForm|crispy }}
+                    <input type="submit" value="Register" class="btn btn-primary">
+                </form>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}
+
+
+

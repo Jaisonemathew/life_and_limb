@@ -1,0 +1,302 @@
+
+{% extends "appname/_base.html" %}
+{% load static %}
+{%block content%}
+<main class="main">
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero section light-background">
+
+    <img src="{% static 'assets/img/hero-bg.jpg' %}" alt="" data-aos="fade-in">
+
+    <div class="container position-relative">
+
+      <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
+        <h2 class="heading">WELCOME TO LIFE & LIMB </h2>
+        <p class="heading">We are a team with charity services</p>
+      </div><!-- End Welcome -->
+
+      <div class="content row gy-4">
+        <div class="col-lg-4 d-flex align-items-stretch">
+          <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
+            <h3>Why Choose Life & Limb?</h3>
+            <p>
+              Life and Limb is a charity focused on providing prosthetic limbs and support to amputees. The organization aims to restore mobility and independence for individuals who have lost limbs due to injury, illness, or congenital conditions. By offering access to high-quality prosthetics and rehabilitation services, Life and Limb helps improve the quality of life for its recipients. Additionally, the charity often engages in advocacy and awareness efforts to highlight the needs of amputees and promote inclusivity in society.
+            </p>
+            <div class="text-center">
+              <a href="#about" class="more-btn"><span>Learn More</span> <i class="bi bi-chevron-right"></i></a>
+            </div>
+          </div>
+        </div><!-- End Why Box -->
+
+        <div class="col-lg-8 d-flex align-items-stretch">
+          <div class="d-flex flex-column justify-content-center">
+            <div class="row gy-4">
+
+              <div class="col-xl-4 d-flex align-items-stretch">
+                <div class="icon-box" data-aos="zoom-out" data-aos-delay="300">
+                  <i class="bi bi-clipboard-data"></i>
+                  <h4>Aesthetic Options</h4>
+                  <p>Customizable designs and skin tones help achieve a natural appearance, boosting user confidence.</p>
+                </div>
+              </div><!-- End Icon Box -->
+
+              <div class="col-xl-4 d-flex align-items-stretch">
+                <div class="icon-box" data-aos="zoom-out" data-aos-delay="400">
+                  <i class="bi bi-gem"></i>
+                  <h4>Lightweight Materials</h4>
+                  <p>Use of carbon fiber and titanium reduces weight while maintaining strength.</p>
+                </div>
+              </div><!-- End Icon Box -->
+
+              <div class="col-xl-4 d-flex align-items-stretch">
+                <div class="icon-box" data-aos="zoom-out" data-aos-delay="500">
+                  <i class="bi bi-inboxes"></i>
+                  <h4>Rehabilitation Support</h4>
+                  <p>Many high-quality limbs come with integrated rehabilitation tools and resources to aid in recovery and adaptation</p>
+                </div>
+              </div><!-- End Icon Box -->
+
+            </div>
+          </div>
+        </div>
+      </div><!-- End  Content-->
+
+    </div>
+
+  </section><!-- /Hero Section -->
+
+  <!-- About Section -->
+  <section id="about" class="about section">
+
+    <div class="container">
+
+      <div class="row gy-4 gx-5">
+
+        <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
+          <img src="{% static 'assets/img/2.jpg' %}" class="img-fluid" alt="">
+          <a href="https://youtu.be/c0NoHY4dmqs?si=XbdaZaZxA8k2EtEt" class="glightbox pulsating-play-btn"></a>
+        </div>
+
+        <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+          <h3>About Us</h3>
+          <p>Conduct thorough evaluations to understand the amputee's physical condition, psychological state, and functional goals.
+            Assess the level of amputation and any additional health considerations.
+            Patient Education:Provide comprehensive information about the prosthetic options available, including types, materials, and technologies.
+            Educate patients on the rehabilitation process and what to expect.
+            Prosthetic Training:Teach patients how to properly use, maintain, and care for their prosthetics.
+            Include training on donning and doffing the prosthetic, adjusting it for comfort, and troubleshooting common issues.
+             </p>
+          <ul>
+            <li>
+              <i class="fa-solid fa-vial-circle-check"></i>
+              <div>
+                <h5>Mobility Training:</h5>
+                <p>Provide gait training to help patients learn how to walk or move effectively with their prosthetics.
+                  Use adaptive techniques and assistive devices as needed.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-pump-medical"></i>
+              <div>
+                <h5>Psychosocial Support:</h5>
+                <p>Offer counseling and support groups to address emotional and psychological challenges related to amputation.
+                  Encourage communication about fears, body image issues, and social reintegration.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-heart-circle-xmark"></i>
+              <div>
+                <h5>Natural Appearance</h5>
+                <p>Crafted using silicone or other materials that mimic skin texture and tone, making them visually indistinguishable from natural limbs. </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section><!-- /About Section -->
+
+  <!-- Services Section -->
+  <section id="serivces" class="services section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Review</h2>
+      <p>Reviews of our users</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+      {% for r in rw %}
+   <div class="container9">
+      <div class="shape" style="height:1px;">
+      </div>
+
+      <div class="titlepage">
+         <h2>{{r.uname}}</h2>
+      </div>
+      <p>{{r.email}}</p>
+      <p>{{r.message}}</p>
+      {% endfor %}
+
+      </div>
+
+    </div>
+
+  </section><!-- /Services Section -->
+
+  <!-- Appointment Section -->
+  <section id="appointment" class="appointment section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>contact</h2>
+      <p>Welcome to our Contact Page! Feel free to reach out to us using the form below</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <form method="post">
+        {% csrf_token %}
+          <h2 class="form-section-heading">Let us know what u think...</h2>
+
+          <div class="field-wrap">
+            <div class="field">
+              <label class="label" for="name">Name</label>
+              <input class="input" id="name" name="name" type="text" required>
+            </div>
+          </div>
+          <div class="field-wrap">
+            <div class="field">
+              <label class="label" for="phone">Phone number</label>
+              <input class="input" id="phone" name="phone" type="phone" required>
+            </div>
+          </div>
+          <div class="field-wrap">
+            <div class="field">
+              <label class="label" for="email">E-mail</label>
+              <input class="input" id="email" name="email" type="email" required>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <div class="field">
+              <label class="label" for="message">Message</label>
+              <textarea class="input" id="message" name="message" required></textarea>
+            </div>
+        </div>
+
+        <br>
+        <div class="cnt">
+            <button type="Submit">Submit</button><br><br>
+        </div>
+        </form>
+
+    </div>
+
+  </section><!-- /Appointment Section -->
+
+  <!-- Departments Section -->
+  <section id="departments" class="departments section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Departments</h2>
+      <p>Medical team  ensuring patients comprehensive care and guidance throughout our treatment journey.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row">
+        <div class="col-lg-3">
+          <ul class="nav nav-tabs flex-column">
+             <li class="nav-item">
+              <a class="nav-link active show" data-bs-toggle="tab" href="#departments-tab-1">Prosthetics and Orthotics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-3">Psychology/Psychiatry</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-4">Occupational Therapy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-5">Social Work</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-9 mt-4 mt-lg-0">
+          <div class="tab-content">
+             {% comment %} <div class="tab-pane active show" id="departments-tab-1">
+              <div class="row">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>Cardiology</h3>
+                  <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
+                  <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="{% static 'assets/img/departments-1.jpg' %}" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>   {% endcomment %}
+            <div class="tab-pane active show" id="departments-tab-1">
+              <div class="row">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>Prosthetics and Orthotics</h3>
+                  <p class="fst-italic"> Specialists who design, create, and fit artificial limbs tailored to the individual’s needs and lifestyle. </p>
+                  <p> Comprehensive assessment of the patient’s needs, goals, and the condition of the residual limb. Creating tailored prosthetic limbs based on individual measurements, functional requirements, and aesthetic preferences.Ensuring that the prosthetic limb fits properly and comfortably, making adjustments as necessary</p>
+                <br><br>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="{% static 'assets/img/departments-2.jpg' %}" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="departments-tab-3">
+              <div class="row">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>Psychology/Psychiatry</h3>
+                  <p class="fst-italic">Addresses the psychological aspects of limb loss and adjustment to using a prosthetic limb, providing emotional support.</p>
+                  <p>Assessing the patient’s mental health status, coping mechanisms, and emotional responses related to limb loss.Providing individual therapy to help patients process their feelings about limb loss, including grief, anxiety, and depression.Supporting patients in adjusting to their new reality, including changes in body image and identity.</p>
+                <br><br>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="{% static 'assets/img/departments-3.jpg' %}" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="departments-tab-4">
+              <div class="row">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>Occupational Therapy</h3>
+                  <p class="fst-italic">Occupational therapists assist patients in adapting to daily activities and tasks using their artificial limb, promoting independence.</p>
+                  <p>Evaluating the patient’s abilities, limitations, and needs related to activities of daily living (ADLs) and occupational roles. Developing individualized treatment plans that focus on enhancing the patient’s functional abilities and promoting independence.</p>
+                <br><br>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="{% static 'assets/img/departments-4.jpg' %}" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="departments-tab-5">
+              <div class="row">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>Social Work</h3>
+                  <p class="fst-italic">Social workers may provide support in navigating insurance, resources, and emotional support for patients and families.</p>
+                  <p> Organizing and facilitating support groups for patients and families can provide a platform for shared experiences and coping strategies. These groups help reduce isolation and promote community among those affected by limb loss.</p>
+                <br><br>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="{% static 'assets/img/departments-5.jpg' %}" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  
+{%endblock%}

@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Main CSS File -->
+  <link href="{% static 'assets/css/l.css' %}" rel="stylesheet">
+
+ 
+</head>
+<body>
+    <div class="loginBox"> <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px">
+        <h3>Sign in here</h3>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="inputBox">
+                <input id="uname" type="text" name="username" placeholder="Username">
+                <input id="pass" type="password" name="password" placeholder="Password">
+             </div> 
+                <input type="submit" value="Login">
+            {% for msg in messages %}
+			<h6 class="heady">{{msg}}</h6>
+			{% endfor %}
+        </form> 
+        <a href="{% url "registeru" %}">user Registration<br> </a>
+        <div class="text-center">
+            <p style="color: #59238F;"> <a href="{% url "registers" %}">sponsor Registration<br> </a>  </p>
+        </div>
+        
+    </div>   
+</body>
+</html>
