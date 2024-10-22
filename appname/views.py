@@ -104,13 +104,20 @@ def spoboard(request):
 
 def userboard(request):
     user = request.user
+    patient = None
     try:
-        obj = UserDetail.objects.get(patient=user)
+        patient = UserDetail.objects.get(patient=user)
+        # print(patient)
+        sponsor = SponsorShip.objects.filter(uname=patient).all()
+        is_approved = patient.is_approved
     except UserDetail.DoesNotExist:
-        obj = None 
+        sponsor = []
+        is_approved = False
+   
     context = {
-        'obj': obj,
-    }    
+        'sponsor': sponsor,
+        'is_approved': is_approved
+    }
     return render(request,'appname/userboard.html',context)
     
 def sponsored(request):
