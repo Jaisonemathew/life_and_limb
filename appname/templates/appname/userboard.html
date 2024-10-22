@@ -122,11 +122,13 @@
 <br><br>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<div class="d-flex flex-row">
 {% for i in sponsor %}
+
 <div class="container">
     <div class="row" >
-        <div class="col-xl-4 col-lg-4">
-            <div class="card l-bg-orange-dark">
+        <div class="">
+            <div class="card l-bg-orange-dark d-flex flex-row ">
                 <div class="card-statistic-3 p-4">
                     <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
                     <div class="mb-4">
@@ -148,5 +150,7 @@
         </div>
     </div>
 </div>
+
 {% endfor %}
+</div>
 {% endblock %}
