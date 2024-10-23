@@ -30,7 +30,7 @@ def login(request):
                 messages.error(request, f"An error occurred: {str(e)}")
                 return redirect('appname/login.html')
         else:
-            messages.info(request, "Invalid login details!")
+            # messages.info(request, "Invalid login details!")
             return redirect('appname/login.html')
     
     return render(request, "appname/login.html")
